@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/index.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Adjust background color as needed */
+  }
+  
+  .container {
+    max-width: 100%;
+  }
+
+  
+  body, html {
+    overflow-x: hidden;
+  }
+  
