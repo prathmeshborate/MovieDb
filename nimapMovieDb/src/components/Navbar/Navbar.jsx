@@ -48,8 +48,19 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <a href="/" className="text-primary flex gap-2 font-semibold tracking-widest text-2xl uppercase sm:text-3xl">
             <img src={Logo} alt="Logo" className='w-10'/>
-            MovieDb
+            <span className="hidden lg:inline">MovieDb</span>
           </a>
+          {/* Search Bar section for mobile */}
+          <div className="relative sm:block lg:hidden">
+            <input
+              type="text"
+              placeholder="Search"
+              className="p-1 bg-gray-200 text-black rounded focus:outline-none"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+            />
+          </div>
           {/* Menu Items */}
           <div className="hidden lg:block">
             <ul className="flex items-center gap-4">
@@ -65,24 +76,23 @@ const Navbar = () => {
         </div>
         {/* Navbar Right section */}
         <div className="flex items-center gap-4">
-          {/* Search Bar section */}
-          <div className="relative hidden sm:hidden lg:block">
+          {/* Search Bar section for desktop */}
+          <div className="relative hidden lg:flex items-center">
             <input
               type="text"
               placeholder="Search"
-              className="p-2 bg-gray-200 text-black rounded focus:outline-none"
+              className="p-1 bg-gray-200 text-black rounded focus:outline-none mr-8"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
             />
+            <button
+              className="p-1 bg-gray-500 text-white rounded hover:bg-gray-700 duration-200 mr-4"
+              onClick={handleSearch}
+            >
+              Search
+            </button>
           </div>
-          {/* Search button section for desktop */}
-          <button
-            className="hidden lg:block p-2 bg-gray-500 text-white rounded hover:bg-gray-700 duration-200"
-            onClick={handleSearch}
-          >
-            Search
-          </button>
           {/* Hamburger Menu */}
           <button
             className="lg:hidden p-2 bg-gray-500 text-white rounded hover:bg-gray-700 duration-200"
