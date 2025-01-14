@@ -113,22 +113,6 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            <div className="relative w-full mt-2">
-              <input
-                type="text"
-                placeholder="Search"
-                className="p-2 bg-gray-200 text-black rounded w-full focus:outline-none"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-              />
-              <button
-                className="p-2 bg-gray-500 text-white rounded w-full mt-2 hover:bg-gray-700 duration-200"
-                onClick={handleSearch}
-              >
-                Search
-              </button>
-            </div>
           </ul>
         </div>
       )}
