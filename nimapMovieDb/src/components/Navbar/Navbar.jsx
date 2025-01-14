@@ -24,6 +24,7 @@ const MenuLinks = [
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSearch = async () => {
@@ -65,7 +66,7 @@ const Navbar = () => {
         {/* Navbar Right section */}
         <div className="flex items-center gap-4">
           {/* Search Bar section */}
-          <div className="relative group hidden sm:block">
+          <div className="relative hidden sm:hidden lg:block">
             <input
               type="text"
               placeholder="Search"
@@ -75,15 +76,52 @@ const Navbar = () => {
               onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
             />
           </div>
-          {/* Search button section */}
+          {/* Search button section for desktop */}
           <button
-            className="p-2 bg-gray-500 text-white rounded hover:bg-gray-700 duration-200"
+            className="hidden lg:block p-2 bg-gray-500 text-white rounded hover:bg-gray-700 duration-200"
             onClick={handleSearch}
           >
             Search
           </button>
+          {/* Hamburger Menu */}
+          <button
+            className="lg:hidden p-2 bg-gray-500 text-white rounded hover:bg-gray-700 duration-200"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
         </div>
       </div>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="lg:hidden bg-gray-800 text-white w-full px-4 py-2">
+          <ul className="flex flex-col items-center gap-2">
+            {MenuLinks.map((data) => (
+              <li key={data.id}>
+                <a href={data.link} className="inline-block px-4 font-semibold text-white hover:text-gray-300 duration-200">
+                  {data.name}
+                </a>
+              </li>
+            ))}
+            <div className="relative w-full mt-2">
+              <input
+                type="text"
+                placeholder="Search"
+                className="p-2 bg-gray-200 text-black rounded w-full focus:outline-none"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+              />
+              <button
+                className="p-2 bg-gray-500 text-white rounded w-full mt-2 hover:bg-gray-700 duration-200"
+                onClick={handleSearch}
+              >
+                Search
+              </button>
+            </div>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
