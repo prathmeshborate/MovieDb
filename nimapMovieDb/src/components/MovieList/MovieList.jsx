@@ -1,7 +1,6 @@
-// src/components/MovieList.jsx
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import MovieCard from '../MovieCard/MovieCard';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import MovieCard from "../MovieCard/MovieCard";
 
 const MovieList = ({ endpoint }) => {
   const [movies, setMovies] = useState([]);
@@ -9,7 +8,7 @@ const MovieList = ({ endpoint }) => {
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const maxPages = 50; // Limit the number of pages to 50
+  const maxPages = 50;
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -48,7 +47,9 @@ const MovieList = ({ endpoint }) => {
       pageNumbers.push(
         <button
           key={i}
-          className={`px-3 py-1 ${currentPage === i ? 'bg-blue-700' : 'bg-blue-500'} text-white rounded mx-1`}
+          className={`px-3 py-1 ${
+            currentPage === i ? "bg-blue-700" : "bg-blue-500"
+          } text-white rounded mx-1`}
           onClick={() => handlePageChange(i)}
         >
           {i}

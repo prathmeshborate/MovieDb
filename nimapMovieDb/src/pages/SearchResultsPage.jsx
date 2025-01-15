@@ -1,4 +1,3 @@
-// src/pages/SearchResultsPage.jsx
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import MovieCard from '../components/MovieCard/MovieCard';

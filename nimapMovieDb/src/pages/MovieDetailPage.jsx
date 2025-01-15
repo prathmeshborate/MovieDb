@@ -1,4 +1,3 @@
-// src/pages/MovieDetailPage.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -49,7 +48,6 @@ const MovieDetailPage = () => {
   return (
     <div className="bg-gray-900 min-h-screen pt-16 w-full mx-0 px-0 flex flex-col items-center mt-4">
       <div className="w-full max-w-6xl bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mx-1 flex flex-col md:flex-row">
-        {/* Left Side - Movie Details */}
         <div className="flex-1 flex flex-col gap-4">
           <div className="flex items-center gap-4">
             <img
@@ -75,7 +73,6 @@ const MovieDetailPage = () => {
           <p className="text-md text-gray-400">{movie.overview}</p>
         </div>
 
-        {/* Right Side - Backdrop Image */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
           <img
             src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}
@@ -85,7 +82,6 @@ const MovieDetailPage = () => {
         </div>
       </div>
 
-      {/* Cast List */}
       <div className="w-full max-w-6xl bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mt-4">
         <h2 className="text-2xl font-bold text-white">Cast</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">

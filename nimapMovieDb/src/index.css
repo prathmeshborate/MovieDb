@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* src/index.css */
 body {
     margin: 0;
     padding: 0;
-    background-color: #000; /* Adjust background color as needed */
+    background-color: #000;
   }
   
   .container {

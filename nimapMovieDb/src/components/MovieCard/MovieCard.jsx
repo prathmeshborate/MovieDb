@@ -1,6 +1,5 @@
-// src/components/MovieCard.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   return (
@@ -8,24 +7,24 @@ const MovieCard = ({ movie }) => {
       <Link to={`/movie/${movie.id}`} className="block overflow-hidden">
         <div
           style={{
-            position: 'relative',
-            width: '100%', 
-            maxWidth: '250px', 
-            paddingBottom: '150%',
-            overflow: 'hidden',
-            borderRadius: '8px',
+            position: "relative",
+            width: "100%",
+            maxWidth: "250px",
+            paddingBottom: "150%",
+            overflow: "hidden",
+            borderRadius: "8px",
           }}
         >
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
             style={{
-              position: 'absolute',
+              position: "absolute",
               top: 0,
               left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
             }}
           />
         </div>

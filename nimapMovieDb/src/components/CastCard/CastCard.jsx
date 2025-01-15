@@ -1,5 +1,4 @@
-// src/components/CastCard.jsx
-import React from 'react';
+import React from "react";
 
 const CastCard = ({ cast }) => {
   return (
